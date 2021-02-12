@@ -14,6 +14,7 @@
     <%= simple_form_for [ @cocktail, @dose ] do |f| %>
     <%= f.input :description %>
     <%= f.association :ingredient %>
+    <%= f.input :photo, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Submit dose", class: "btn btn-primary" %>
     <% end %>
 
