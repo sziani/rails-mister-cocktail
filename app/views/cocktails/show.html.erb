@@ -17,7 +17,7 @@
     <%= f.submit "Submit dose", class: "btn btn-primary" %>
     <% end %>
 
-    <%= link_to "Back to List", cocktails_path %>
+    <%= link_to "Back to List", root_path %>
     <%= link_to "Edit cocktail", edit_cocktail_path %>
     <%= link_to "Delete #{@cocktail.name}",
             cocktail_path(@cocktail),
