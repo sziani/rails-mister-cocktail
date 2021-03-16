@@ -17,6 +17,15 @@ user = JSON.parse(user_serialized)
 # puts user["drinks"][0]["strIngredient1"]
 Cocktail.create(name: "Mojito")
 Cocktail.create(name: "Bloody Mary")
+Cocktail.create(name: "Spritz")
+
+Cocktail.create(name: "Pina Colada")
+Cocktail.create(name: "Long Island")
+Cocktail.create(name: "Moscow Mule")
+
+Cocktail.create(name: "Cosmopolitan")
+Cocktail.create(name: "Caipirinha")
+Cocktail.create(name: "Margarita")
 
 user["drinks"].each do |user|
   ingredient = Ingredient.new(name: user["strIngredient1"])
