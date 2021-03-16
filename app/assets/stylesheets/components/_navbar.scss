@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  height: 70px;
+  height: 100px;
+  background-color: black;
+  opacity: 0.9;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,4 +16,16 @@
 
 .nav-link {
   text-align: right;
+  position: relative;
+}
+
+.nav-link a {
+  position: absolute;
+  right: 24px;
+  bottom: -54px;
+}
+
+.nav-link a:hover {
+  background-color: gold;
+  text-decoration: none;
 }
