@@ -18,10 +18,12 @@
     <%= f.submit "Submit dose", class: "btn btn-primary" %>
     <% end %>
 
-    <%= link_to "Back to List", root_path %>
-    <%= link_to "Edit cocktail", edit_cocktail_path %>
+    <%= link_to "Back to list", root_path, class: "btn btn-primary back" %>
+    <%= link_to "Edit #{@cocktail.name}", edit_cocktail_path, class: "btn btn-primary edit" %>
     <%= link_to "Delete #{@cocktail.name}",
             cocktail_path(@cocktail),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
+            data: { confirm: "Are you sure?" },
+            remote: true,
+            class: "btn btn-primary delete" %>
 </div>
