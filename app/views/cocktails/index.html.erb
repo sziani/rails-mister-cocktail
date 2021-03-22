@@ -5,8 +5,8 @@
 </div>
 
 <div class="container">
-  <h1>Cocktails' list</h1>
-    <div class="cards">
+  <h1 class="text-center">Explore your cocktails' cave</h1>
+    <div class="cards cocktails-list">
     <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail) do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path "pmptog725zpnsjzh1nt7", height: 300, width: 400, crop: :fill %>')">
