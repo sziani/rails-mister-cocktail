@@ -16,3 +16,8 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+import { searchbar } from '../components/searchbar';
+
+document.addEventListener('turbolinks:load', () => {
+filtercocktails();
+});

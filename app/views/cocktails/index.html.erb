@@ -1,20 +1,36 @@
 <div class="navbar-lewagon navbar-collapse">
   <div class="nav-link">
-      <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary"%>
+    <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary"%>
   </div>
 </div>
 
 <div class="container">
-  <h1 class="text-center">Explore your cocktails' cave</h1>
+  <h1 class="text-center">Explore our/your fancy list of cocktails 🍹</h1>
+    <ul style="list-style: none;">
+      <li>Click on some <strong>cocktails</strong> and add your own description/ingredients/doses 🧙‍♂️</li>
+      <li>Click on "create cocktail" <strong>at the top</strong> (you can also add a photo) 📸</li>
+      <li>Search on the cocktail list thanks to <strong>the search bar</strong> 🕵️‍♂️ </li>
+    </ul>
+    <%= simple_form_for :search, html: { class: 'search-cocktail-form' }, url: root_path, method: :get do |f| %>
+    <!-- <div class="search-form-control form-group"> -->
+      <div id="search-data" class="form-search search-data" data-cocktails="<%= Cocktail.pluck(:name).sort.to_json%>">
+        <input class="form-control string required search-input" type="text" name="search[query]" id="search_query" placeholder="Recherche"/>
+        <div class="search-button">
+          <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i></button>
+        </div>
+      </div>
+  <% end %>
     <div class="cards cocktails-list">
-    <% @cocktails.each do |cocktail| %>
-    <%= link_to cocktail_path(cocktail) do %>
-      <div class="card-category"
-        style="background-image:
+      <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
+        <div class="card-category"
+          style="background-image:
           linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
           url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
-      <%= cocktail.name %>
-      </div>
-    <% end %>
-    <% end %>
+        <%= cocktail.name %>
+        </div>
+      <% end %>
+      <% end %>
+    </div>
 </div>
